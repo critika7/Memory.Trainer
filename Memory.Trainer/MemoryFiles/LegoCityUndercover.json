@@ -1,0 +1,64 @@
+{
+	"Name":"Lego City Undercover",
+	"ProcessName":"LEGOLCUR_DX11",
+	"MemoryAddresses": [
+		{
+			"Name": "Studs",
+			"Type": "int", 
+			"Addresses": [
+				"LEGOLCUR_DX11.exe+0x01C7E640,0x0",
+				"LEGOlCUR_DX11.exe+0x01C9E2B8,0x0",
+				"LEGOlCUR_DX11.exe+0x01C92300,0x80",
+				"LEGOlCUR_DX11.exe+0x01C7E850,0x90",
+				"LEGOlCUR_DX11.exe+0x01C7F098,0x94",
+				"LEGOlCUR_DX11.exe+0x01C7F090,0x98",
+				"LEGOlCUR_DX11.exe+0x01C7E848,0xA0",
+				"LEGOlCUR_DX11.exe+0x01CA05C8,0x180",
+				"LEGOlCUR_DX11.exe+0x01C7D510,0x724"
+			]
+		},
+		{
+			"Name": "Super Bricks",
+      "Type": "int",
+			"Addresses": [
+				"LEGOLCUR_DX11.exe+0x01C6BD58,0xA0,0x8,0x10,0x8,0x0,0x10,0xD34",
+				"LEGOLCUR_DX11.exe+0x01C6BD50,0x48,0x98,0x10,0x8,0x0,0x10,0xD34"
+			]
+		},
+		{
+			"Name": "x2 Studs",
+      "Type": "byte",
+			"Addresses": [
+				"LEGOLCUR_DX11.exe+FEFBEA"
+			]
+		},
+		{
+			"Name": "x4 Studs",
+      "Type": "byte",
+			"Addresses": [
+				"LEGOLCUR_DX11.exe+FEFC0A"
+			]
+		},
+		{
+			"Name": "x6 Studs",
+      "Type": "byte",
+			"Addresses": [
+				"LEGOLCUR_DX11.exe+FEFC2A"
+			]
+		},
+		{
+			"Name": "x8 Studs",
+      "Type": "byte",
+			"Addresses": [
+				"LEGOLCUR_DX11.exe+FEFC4A"
+			]
+		},
+		{
+			"Name": "x10 Studs",
+      "Type": "byte",
+			"Addresses": [
+				"LEGOLCUR_DX11.exe+FEFC6A"
+			]
+		}
+	]
+}

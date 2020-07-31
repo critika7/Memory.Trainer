@@ -1,0 +1,158 @@
+{
+	"Name":"The Lego Movie Videogame",
+	"ProcessName":"legoemmet",
+	"MemoryAddresses": [
+		{
+			"Name": "Studs",
+			"Type": "int", 
+			"Addresses": [
+				"legoemmet.exe+0x0167AD14,0x134,0x21C,0x4D8,0xC4,0x2C",
+				"legoemmet.exe+0x0167AD14,0x1C8,0x134,0x21C,0x4D8,0xC4,0x2C",
+				"legoemmet.exe+0x016EAFE4,0x0",
+				"legoemmet.exe+0x016EAF00,0x3C",
+				"legoemmet.exe+0x016EBAD4,0x40",
+				"legoemmet.exe+0x016EAF70,0x108"
+			]
+		},
+		{
+			"Name": "x2 Studs Red Brick",
+			"Type": "byte",
+			"Addresses": [
+				"legoemmet.exe+FE9F36"
+			]
+		},
+		{
+			"Name": "x4 Studs Red Brick",
+			"Type": "byte",
+			"Addresses": [
+				"legoemmet.exe+FE9F4E"
+			]
+		},
+		{
+			"Name": "x6 Studs Red Brick",
+			"Type": "byte",
+			"Addresses": [
+				"legoemmet.exe+FE9F66"
+			]
+		},
+		{
+			"Name": "x8 Studs Red Brick",
+			"Type": "byte",
+			"Addresses": [
+				"legoemmet.exe+FE9F7E"
+			]
+		},
+		{
+			"Name": "x10 Studs Red Brick",
+			"Type": "byte",
+			"Addresses": [
+				"legoemmet.exe+FE9F96"
+			]
+		},
+		{
+			"Name": "Fast Repair",
+			"Type": "byte",
+			"Addresses": [
+				"legoemmet.exe+FE9FAE"
+			]
+		},
+		{
+			"Name": "Fast Drill",
+			"Type": "byte",
+			"Addresses": [
+				"legoemmet.exe+FE9FC6"
+			]
+		},
+		{
+			"Name": "Fast Build",
+			"Type": "byte",
+			"Addresses": [
+				"legoemmet.exe+FE9FDE"
+			]
+		},
+		{
+			"Name": "Fast Boomerang",
+			"Type": "byte",
+			"Addresses": [
+				"legoemmet.exe+FE9FF6"
+			]
+		},
+		{
+			"Name": "Fast Secret Knock",
+			"Type": "byte",
+			"Addresses": [
+				"legoemmet.exe+FEA00E"
+			]
+		},
+		{
+			"Name": "Fast Hack",
+			"Type": "byte",
+			"Addresses": [
+				"legoemmet.exe+FEA026"
+			]
+		},
+		{
+			"Name": "Gold Instruction Page Detector",
+			"Type": "byte",
+			"Addresses": [
+				"legoemmet.exe+FEA03E"
+			]
+		},
+		{
+			"Name": "Red Brick Detector",
+			"Type": "byte",
+			"Addresses": [
+				"legoemmet.exe+FEA056"
+			]
+		},
+		{
+			"Name": "Pants Detector",
+			"Type": "byte",
+			"Addresses": [
+				"legoemmet.exe+FEA06E"
+			]
+		},
+		{
+			"Name": "Character Studs",
+			"Type": "byte",
+			"Addresses": [
+				"legoemmet.exe+FEA086"
+			]
+		},
+		{
+			"Name": "Collect Guide Studs",
+			"Type": "byte",
+			"Addresses": [
+				"legoemmet.exe+FEA09E"
+			]
+		},
+		{
+			"Name": "Attract Studs",
+			"Type": "byte",
+			"Addresses": [
+				"legoemmet.exe+FEA0B6"
+			]
+		},
+		{
+			"Name": "Extra Hearts",
+			"Type": "byte",
+			"Addresses": [
+				"legoemmet.exe+FEA0CE"
+			]
+		},
+		{
+			"Name": "Regenerate Hearts",
+			"Type": "byte",
+			"Addresses": [
+				"legoemmet.exe+FEA0E6"
+			]
+		},
+		{
+			"Name": "Invincibility",
+			"Type": "byte",
+			"Addresses": [
+				"legoemmet.exe+FEA0FE"
+			]
+		}
+	]
+}
