@@ -1,0 +1,54 @@
+{
+	"Name":"Idle Slayer",
+	"ProcessName":"Idle Slayer",
+	"MemoryAddresses": [
+    {
+      "Name": "Coins",
+      "Type": "double",
+			"Addresses": [
+				"UnityPlayer.dll+018E5D70,0x0,0x70,0x0,0xB0,0x8,0x80,0x88",
+				"mono-2.0-bdwgc.dll+00495DE8,0x150,0xD30,0x78,0x0,0x68,0x28,0x88"
+			]
+    },
+		{
+			"Name": "Coins per Second",
+			"Type": "double",
+			"Addresses": [
+				"mono-2.0-bdwgc.dll+0073EF60,0x998,0x30,0x350,0xDD8",
+				"UnityPlayer.dll+018E27F0,0x40,0x180,0xC0,0xA0,0x45C,0x0,0xB8"
+			]
+		},
+		{
+			"Name": "Slayer points",
+			"Type": "double",
+			"Addresses": [
+				"mono-2.0-bdwgc.dll+00495DE8,0x150,0xDC8",
+				"mono-2.0-bdwgc.dll+004A57D8,0x230,0x350,0xDC8"
+			]
+		},
+		{
+			"Name": "Sword level",
+			"Type": "int",
+			"Addresses": [
+				"mono-2.0-bdwgc.dll+00495De8,0x150,0xD68,0x3C0,0xE0,0x80,0x70,0x68",
+				"mono-2.0-bdwgc.dll+004A53F8,0x350,0xD68,0x3C0,0xE0,0x80,0x70,0x68",
+			]
+		},
+		{
+			"Name": "Shield level",
+			"Type": "int",
+			"Addresses": [
+				"mono-2.0-bdwgc.dll+004A5528,0x230,0x350,0xD60,0x70,0x168",
+				"mono-2.0-bdwgc.dll+00495DC8,0x440,0x230,0x350,0xD60,0x70,0x168"
+			]
+		},
+		{
+			"Name": "Armor level",
+			"Type": "int",
+			"Addresses": [
+				"mono-2.0-bdwgc.dll+004A5528,0x230,0x260,0xC28,0xD8,0x350,0x38,0x68",
+				"mono-2.0-bdwgc.dll+00495DE8,0x60,0xC28,0xD8,0x350,0x38,0x68"
+			]
+		}
+	]
+}

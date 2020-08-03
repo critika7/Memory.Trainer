@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="31">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>2</ID>
+      <Description>"CpS"</Description>
+      <LastState Value="66023814864.6634" RealAddress="20C4BAB1DD8"/>
+      <VariableType>Double</VariableType>
+      <Address>"mono-2.0-bdwgc.dll"+004A5458</Address>
+      <Offsets>
+        <Offset>DD8</Offset>
+        <Offset>350</Offset>
+        <Offset>2A0</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>5</ID>
+      <Description>"Total Coins"</Description>
+      <LastState Value="8.00009999999999E40" RealAddress="20C4BAB1DA8"/>
+      <VariableType>Double</VariableType>
+      <Address>"mono-2.0-bdwgc.dll"+00495DE8</Address>
+      <Offsets>
+        <Offset>88</Offset>
+        <Offset>28</Offset>
+        <Offset>110</Offset>
+        <Offset>C0</Offset>
+        <Offset>90</Offset>
+        <Offset>D30</Offset>
+        <Offset>150</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>6</ID>
+      <Description>"Total Coins"</Description>
+      <LastState Value="8.00009999999999E40" RealAddress="20C4BAB1DA8"/>
+      <VariableType>Double</VariableType>
+      <Address>"mono-2.0-bdwgc.dll"+004A5528</Address>
+      <Offsets>
+        <Offset>88</Offset>
+        <Offset>28</Offset>
+        <Offset>110</Offset>
+        <Offset>A8</Offset>
+        <Offset>D30</Offset>
+        <Offset>350</Offset>
+        <Offset>230</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>28</ID>
+      <Description>"Slayer points"</Description>
+      <LastState Value="396700" RealAddress="20C4BAB1DC8"/>
+      <VariableType>Double</VariableType>
+      <Address>"mono-2.0-bdwgc.dll"+00495DE8</Address>
+      <Offsets>
+        <Offset>DC8</Offset>
+        <Offset>150</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>29</ID>
+      <Description>"Slayer points"</Description>
+      <LastState Value="396700" RealAddress="20C4BAB1DC8"/>
+      <VariableType>Double</VariableType>
+      <Address>"mono-2.0-bdwgc.dll"+004A53F8</Address>
+      <Offsets>
+        <Offset>DC8</Offset>
+        <Offset>350</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>33</ID>
+      <Description>"Upgrades"</Description>
+      <LastState Value="" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+      <Address/>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>38</ID>
+          <Description>"Sword level"</Description>
+          <LastState Value="216" RealAddress="20C4A724A68"/>
+          <VariableType>4 Bytes</VariableType>
+          <Address>"mono-2.0-bdwgc.dll"+00495DE8</Address>
+          <Offsets>
+            <Offset>68</Offset>
+            <Offset>70</Offset>
+            <Offset>80</Offset>
+            <Offset>E0</Offset>
+            <Offset>3C0</Offset>
+            <Offset>D68</Offset>
+            <Offset>150</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>36</ID>
+          <Description>"Shield level"</Description>
+          <LastState Value="182" RealAddress="20C4BC6D568"/>
+          <VariableType>4 Bytes</VariableType>
+          <Address>"mono-2.0-bdwgc.dll"+00495DE8</Address>
+          <Offsets>
+            <Offset>168</Offset>
+            <Offset>70</Offset>
+            <Offset>40</Offset>
+            <Offset>28</Offset>
+            <Offset>90</Offset>
+            <Offset>D30</Offset>
+            <Offset>150</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>40</ID>
+          <Description>"Armor level"</Description>
+          <LastState Value="363" RealAddress="20C4BC6D7E8"/>
+          <VariableType>4 Bytes</VariableType>
+          <Address>"mono-2.0-bdwgc.dll"+00495DE8</Address>
+          <Offsets>
+            <Offset>68</Offset>
+            <Offset>38</Offset>
+            <Offset>350</Offset>
+            <Offset>D8</Offset>
+            <Offset>C28</Offset>
+            <Offset>60</Offset>
+          </Offsets>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <CheatCodes>
+    <CodeEntry Color="20000000">
+      <Description>Change of and qword ptr [rdi+38],00</Description>
+      <AddressString>mono-2.0-bdwgc.dll+308082</AddressString>
+      <Before>
+        <Byte>48</Byte>
+        <Byte>89</Byte>
+        <Byte>44</Byte>
+        <Byte>CF</Byte>
+        <Byte>40</Byte>
+      </Before>
+      <Actual>
+        <Byte>48</Byte>
+        <Byte>83</Byte>
+        <Byte>67</Byte>
+        <Byte>38</Byte>
+        <Byte>00</Byte>
+      </Actual>
+      <After>
+        <Byte>48</Byte>
+        <Byte>83</Byte>
+        <Byte>C4</Byte>
+        <Byte>20</Byte>
+        <Byte>5F</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry Color="20000000">
+      <Description>Change of nop </Description>
+      <AddressString>mono-2.0-bdwgc.dll+308082</AddressString>
+      <Before>
+        <Byte>48</Byte>
+        <Byte>89</Byte>
+        <Byte>44</Byte>
+        <Byte>CF</Byte>
+        <Byte>40</Byte>
+      </Before>
+      <Actual>
+        <Byte>90</Byte>
+        <Byte>90</Byte>
+        <Byte>90</Byte>
+        <Byte>90</Byte>
+        <Byte>90</Byte>
+      </Actual>
+      <After>
+        <Byte>48</Byte>
+        <Byte>83</Byte>
+        <Byte>C4</Byte>
+        <Byte>20</Byte>
+        <Byte>5F</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry Color="20000000">
+      <Description>Change of inc [rdx+38]</Description>
+      <AddressString>mono-2.0-bdwgc.dll+30F1CF</AddressString>
+      <Before>
+        <Byte>4E</Byte>
+        <Byte>89</Byte>
+        <Byte>44</Byte>
+        <Byte>CA</Byte>
+        <Byte>40</Byte>
+      </Before>
+      <Actual>
+        <Byte>48</Byte>
+        <Byte>FF</Byte>
+        <Byte>42</Byte>
+        <Byte>38</Byte>
+      </Actual>
+      <After>
+        <Byte>48</Byte>
+        <Byte>8B</Byte>
+        <Byte>72</Byte>
+        <Byte>28</Byte>
+        <Byte>48</Byte>
+      </After>
+    </CodeEntry>
+  </CheatCodes>
+  <UserdefinedSymbols/>
+</CheatTable>

@@ -43,6 +43,8 @@
             this.button4 = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnSaveLayout = new System.Windows.Forms.Button();
+            this.btnEditLayout = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmbProcesses
@@ -184,12 +186,35 @@
             this.label4.Text = "label4";
             this.label4.Visible = false;
             // 
+            // btnSaveLayout
+            // 
+            this.btnSaveLayout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveLayout.Location = new System.Drawing.Point(677, 24);
+            this.btnSaveLayout.Name = "btnSaveLayout";
+            this.btnSaveLayout.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveLayout.TabIndex = 15;
+            this.btnSaveLayout.Text = "Save Layout";
+            this.btnSaveLayout.UseVisualStyleBackColor = true;
+            // 
+            // btnEditLayout
+            // 
+            this.btnEditLayout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEditLayout.Location = new System.Drawing.Point(385, 24);
+            this.btnEditLayout.Name = "btnEditLayout";
+            this.btnEditLayout.Size = new System.Drawing.Size(75, 23);
+            this.btnEditLayout.TabIndex = 16;
+            this.btnEditLayout.Text = "Edit Layout";
+            this.btnEditLayout.UseVisualStyleBackColor = true;
+            this.btnEditLayout.Visible = false;
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(764, 449);
+            this.Controls.Add(this.btnEditLayout);
+            this.Controls.Add(this.btnSaveLayout);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label3);
@@ -230,6 +255,8 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnSaveLayout;
+        private System.Windows.Forms.Button btnEditLayout;
     }
 }
 

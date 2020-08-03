@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using LegoCityUnderCover.Trainer.Models;
 using Memory;
 
@@ -9,15 +11,18 @@ namespace LegoCityUnderCover.Trainer
     public class MemoryHandler
     {
         private readonly ProcessInfo _processInfo;
-        private Mem _mem = new Mem();
+        private readonly Mem _mem = new Mem();
         private bool _isAttached = false;
 
         public EventHandler<bool> AttachedToProcess;
+
+        private readonly Dictionary<MemAddress, string> _freezingMemory = new Dictionary<MemAddress, string>();
 
         public MemoryHandler(ProcessInfo processInfo)
         {
             _processInfo = processInfo ?? throw new ArgumentNullException(nameof(processInfo));
             CheckIfAttached();
+            WriteFreezedValues();
         }
 
         private bool CheckIfAttached()
@@ -42,16 +47,31 @@ namespace LegoCityUnderCover.Trainer
             switch (dataType)
             {
                 case "int":
-                    return GetIntValue(memAdress).ToString();
+                    return GetIntValue(memAdress).ToString().Replace("E+","E");
                 case "string":
                     return GetStringValue(memAdress);
                 case "float":
                     return GetFloatValue(memAdress).ToString();
                 case "byte":
                     return GetByteValue(memAdress).ToString();
+                case "double":
+                    return GetDoubleValue(memAdress).ToString();
             }
 
             return default;
+        }
+
+        private double GetDoubleValue(MemAddress memAdress)
+        {
+            var value = 0d;
+            foreach (var address in memAdress.Addresses)
+            {
+                value = _mem.ReadDouble(address);
+                if (value > 0f)
+                    break;
+            }
+
+            return value;
         }
 
         private float GetFloatValue(MemAddress memAdress)
@@ -79,11 +99,11 @@ namespace LegoCityUnderCover.Trainer
             return value;
         }
 
-        private string GetStringValue(MemAddress memAdress)
+        private string GetStringValue(MemAddress memAddress)
         {
             string value = null;
 
-            foreach (var address in memAdress.Addresses)
+            foreach (var address in memAddress.Addresses)
             {
                 value = _mem.ReadString(address);
                 if (!string.IsNullOrEmpty(value))
@@ -93,11 +113,11 @@ namespace LegoCityUnderCover.Trainer
             return value;
         }
 
-        public int GetIntValue(MemAddress memAdress)
+        public int GetIntValue(MemAddress memAddress)
         {
             var value = 0;
 
-            foreach (var address in memAdress.Addresses)
+            foreach (var address in memAddress.Addresses)
             {
                 value = _mem.ReadInt(address);
                 if (value > 0)
@@ -110,31 +130,72 @@ namespace LegoCityUnderCover.Trainer
 
         #region WriteValue
 
-        public bool WriteValue(string name, string dataType, string value)
+        public bool WriteValue(string name, string dataType, string value, bool? freeze = null)
         {
             if (!_isAttached)
                 return false;
 
-            var memAdress = _processInfo.MemoryAddresses.FirstOrDefault(x => x.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
-            if (memAdress == null)
+            var memAddress = _processInfo.MemoryAddresses.FirstOrDefault(x => x.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
+            if (memAddress == null)
                 return false;
+
+            if (freeze == true)
+                _freezingMemory.Add(memAddress,value);
+            else if (freeze == false)
+                _freezingMemory.Remove(memAddress);
 
             switch (dataType)
             {
                 case "int":
-                    return WriteIntValue(memAdress, value);
+                    return WriteIntValue(memAddress, value);
                 case "string":
-                    return WriteStringValue(memAdress, value);
+                    return WriteStringValue(memAddress, value);
                 case "float":
-                    return WriteFloatValue(memAdress, value);
+                    return WriteFloatValue(memAddress, value);
                 case "byte":
-                    return WriteByteValue(memAdress, value);
+                    return WriteByteValue(memAddress, value);
+                case "double":
+                    return WriteDoubleValue(memAddress, value);
             }
 
             return false;
         }
 
 
+        private async Task WriteFreezedValues()
+        {
+            await Task.Run(async () =>
+            {
+                while (true)
+                {
+                    try
+                    {
+                        foreach (var memory in _freezingMemory)
+                        {
+                            WriteValue(memory.Key.Name, memory.Key.Type, memory.Value);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                    await Task.Delay(50);
+                }
+            });
+        }
+        private bool WriteDoubleValue(MemAddress memAddress, string value)
+        {
+            if (!double.TryParse(value, out var test))
+                return false;
+
+            foreach (var address in memAddress.Addresses)
+            {
+                if (_mem.WriteMemory(address, "double", value))
+                    return true;
+            }
+
+            return false;
+        }
 
 
         public bool WriteIntValue(MemAddress memAddress, string value)

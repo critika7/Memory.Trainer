@@ -10,6 +10,11 @@ This is a simple and currently poorly written application to easily create a tra
 - The Lego Movie Videogame
   - Studs
   - Studs Multiplier Red Bricks
+- Idle Slayer
+  - CpS (Coins per Second)
+  - Coins
+  - Slayer Points
+  - Upgrades (Sword, Shield, Armor)
 
 # Add a new game
 To create a new game you just need to add a json to the **MemoryFiles** directory.

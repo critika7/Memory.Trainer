@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
-using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 using LegoCityUnderCover.Trainer.Models;
 
@@ -20,7 +19,7 @@ namespace LegoCityUnderCover.Trainer
 
         }
 
-        private void OnFrmMainLoad(object sender, System.EventArgs e)
+        private void OnFrmMainLoad(object sender, EventArgs e)
         {
             foreach (var file in Directory.GetFiles("MemoryFiles"))
             {
@@ -30,7 +29,7 @@ namespace LegoCityUnderCover.Trainer
 
 
 
-        private Size _textBoxSize = new Size(286, 20);
+        private readonly Size _textBoxSize = new Size(286, 20);
         private void OnBtnLoadClick(object sender, System.EventArgs e)
         {
             if (cmbProcesses.SelectedItem == null)
@@ -47,7 +46,7 @@ namespace LegoCityUnderCover.Trainer
 
             _currentProcess = cmbProcesses.SelectedItem as ProcessInfo;
 
-            Text = _currentProcess.Name +" trainer | NOT ATTACHED";
+            Text = _currentProcess.Name +" trainer";
             _memoryHandler = new MemoryHandler(_currentProcess);
             _memoryHandler.AttachedToProcess += OnAttachedToProcess;
 
@@ -90,13 +89,35 @@ namespace LegoCityUnderCover.Trainer
                     Text = "Set",
                     Tag = address
                 };
+
+                var cb = new CheckBox
+                {
+                    Size = new Size(70, 17),
+                    Location = new Point(304 + second * 373, lastYPos - 18),
+                    Text = "Freeze",
+                    Tag = button
+                };
+                cb.CheckedChanged += OnCheckedChanged;
                 button.Click += OnButtonClick;
+                Controls.Add(cb);
                 Controls.Add(label);
                 Controls.Add(textBox);
                 Controls.Add(button);
                 _controls.Add(button,textBox);
                 second++;
                 third++;
+            }
+
+            btnEditLayout.Visible = true;
+        }
+
+        private void OnCheckedChanged(object sender, EventArgs e)
+        {
+            if (sender is CheckBox cb)
+            {
+                var button = (Button)cb.Tag;
+                var address = (MemAddress)button.Tag;
+                _memoryHandler.WriteValue(address.Name, address.Type, _controls[button].Text, cb.Checked);
             }
         }
 
